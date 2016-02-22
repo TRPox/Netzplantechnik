@@ -1,1 +1,12 @@
 c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\bin\Debug\Netzplantechnik.exe.config
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\MainWindow.baml
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\MainWindow.g.cs
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\App.g.cs
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik_MarkupCompile.cache
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.g.resources
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.Properties.Resources.resources
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.csproj.GenerateResource.Cache
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\bin\Debug\Netzplantechnik.exe
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\bin\Debug\Netzplantechnik.pdb
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.exe
+c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.pdb
