@@ -16,7 +16,11 @@ namespace Netzplantechnik.Model
 
         public override void calculateEarliestStartForNext()
         {
-            Next.EarliestStart = Previous.EarliestEnd.AddDays(1) + Wait;
+            DateTime newStart = Previous.EarliestEnd.AddDays(1) + Wait;
+            if (Next.EarliestStart.CompareTo(newStart) < 0)
+            {
+                Next.EarliestStart = Previous.EarliestEnd.AddDays(1) + Wait;
+            }
         }
     }
 }
