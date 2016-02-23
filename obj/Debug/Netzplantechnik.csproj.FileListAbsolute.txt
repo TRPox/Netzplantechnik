@@ -10,3 +10,16 @@ c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\bin\Debug\Ne
 c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\bin\Debug\Netzplantechnik.pdb
 c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.exe
 c:\users\sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.pdb
+D:\DropboxArchiv\Coden\Netzplantechnik\bin\Debug\Netzplantechnik.exe.config
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.csprojResolveAssemblyReference.cache
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\MainWindow.baml
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\MainWindow.g.cs
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\App.g.cs
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik_MarkupCompile.cache
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.g.resources
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.Properties.Resources.resources
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.csproj.GenerateResource.Cache
+D:\DropboxArchiv\Coden\Netzplantechnik\bin\Debug\Netzplantechnik.exe
+D:\DropboxArchiv\Coden\Netzplantechnik\bin\Debug\Netzplantechnik.pdb
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.exe
+D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.pdb

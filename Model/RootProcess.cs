@@ -32,13 +32,13 @@ namespace Netzplantechnik.Model
             set;
         }
 
-        public DateTime latestStart
+        public DateTime LatestStart
         {
             get;
             set;
         }
 
-        public DateTime latestEnd
+        public DateTime LatestEnd
         {
             get;
             set;

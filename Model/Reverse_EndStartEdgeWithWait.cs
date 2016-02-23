@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Netzplantechnik.Model
 {
-    class EndStartEdgeWithWait : Edge
+    class Reverse_EndStartEdgeWithWait : Edge
     {
         public TimeSpan Wait
         {
@@ -16,10 +16,10 @@ namespace Netzplantechnik.Model
 
         public override void calculateEarliestStartForNext()
         {
-            DateTime newStart = Previous.EarliestEnd.AddDays(1) + Wait;
-            if (Next.EarliestStart.CompareTo(newStart) < 0)  // if Next.EarliestStart - newStart < 0
+            DateTime newEnd = Next.LatestStart.AddDays(-1) - Wait;   //SE_n = SA_(n+1) -1 -a
+            if (Previous.LatestEnd.CompareTo(newEnd) > 0) // if Previous.LatestEnd - newEnd > 0
             {
-                Next.EarliestStart = newStart;
+                Previous.LatestEnd = newEnd;
             }
         }
     }

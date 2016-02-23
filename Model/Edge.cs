@@ -12,7 +12,7 @@ namespace Netzplantechnik.Model
 
         public Process Next { get; set; }
 
-        public abstract void calculateEarliestStartForNext();
+        public abstract void calculateEarliestStartForNext(); //Koennte man hier vielleicht noch calculateLatestStartForPrevious und alle anderen Kombinationen aufnehmen?
 
     }
 }

@@ -8,7 +8,7 @@ namespace Netzplantechnik.Model
 {
     public class EndStartEdge : Edge
     {
-        public void calculateEarliestStartForNext()
+        public override void calculateEarliestStartForNext()
         {
             Next.EarliestStart = Previous.EarliestEnd.AddDays(1);
         }
