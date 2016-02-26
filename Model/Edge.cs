@@ -26,7 +26,7 @@ namespace Netzplantechnik.Model
         }
 
 
-        public void calculateLatestDatesForPrevious()
+        public virtual void calculateLatestDatesForPrevious()
         {
             calculateLatestEndForPrevious();
             calculateLatestStartForPrevious();
@@ -36,8 +36,10 @@ namespace Netzplantechnik.Model
         protected abstract void calculateLatestEndForPrevious();
 
 
-        protected abstract void calculateLatestStartForPrevious();
-        
+        protected virtual void calculateLatestStartForPrevious()
+        {
+            Previous.LatestStart= Previous.LatestEnd - Previous.Duration + new TimeSpan(1, 0, 0, 0);
+        }
 
     }
 }

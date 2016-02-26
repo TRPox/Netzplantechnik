@@ -25,7 +25,11 @@ namespace Netzplantechnik.Model
 
         protected override void calculateLatestEndForPrevious()
         {
-            throw new NotImplementedException();
+            DateTime newEnd = Next.LatestStart.AddDays(-1) - Wait;   //SE_n = SA_(n+1) -c -1
+            if (Previous.LatestEnd.CompareTo(newEnd) < 0)
+            {
+                Previous.LatestEnd = newEnd;
+            }
         }
 
         protected override void calculateLatestStartForPrevious()

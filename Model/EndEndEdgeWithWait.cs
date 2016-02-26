@@ -40,12 +40,26 @@ namespace Netzplantechnik.Model
 
         protected override void calculateLatestEndForPrevious()
         {
-            throw new NotImplementedException();
+            DateTime newEnd = Next.LatestEnd - Wait;  // FEZ_n = FEZ_(n+1) - c
+            if (Previous.LatestEnd.CompareTo(newEnd) < 0)
+            {
+                Previous.LatestEnd = newEnd;
+            }
         }
 
-        protected override void calculateLatestStartForPrevious()
+        public override void calculateLatestDatesForPrevious()
         {
-            throw new NotImplementedException();
+            calculateEarliestEndForNext();
+            calculateEarliestStartForNext();
+
+            DateTime newEnd = Next.LatestEnd - Wait;   //SE_n = SE_(n+1) - c
+            if (Previous.LatestEnd.CompareTo(newEnd) > 0) // if Previous.LatestEnd - newEnd > 0
+            {
+                Previous.LatestEnd = newEnd;
+            }
         }
+
+
+
     }
 }

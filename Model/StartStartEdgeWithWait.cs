@@ -24,15 +24,24 @@ namespace Netzplantechnik.Model
             }
         }
 
+        public override void calculateLatestDatesForPrevious()
+        {
+            calculateLatestStartForPrevious();
+            calculateLatestEndForPrevious();
+        }
 
         protected override void calculateLatestEndForPrevious()
         {
-            throw new NotImplementedException();
+            Previous.LatestEnd = Previous.LatestStart + Previous.Duration - new TimeSpan(1, 0, 0, 0);
         }
 
         protected override void calculateLatestStartForPrevious()
         {
-            throw new NotImplementedException();
+            DateTime newStart = Next.LatestStart - Wait;  
+            if (Previous.LatestStart.CompareTo(newStart) < 0)
+            {
+                Previous.LatestStart = newStart;
+            }
         }
     }
 }
