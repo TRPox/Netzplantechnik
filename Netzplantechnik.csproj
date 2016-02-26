@@ -71,9 +71,8 @@
     <Compile Include="Model\Edge.cs" />
     <Compile Include="Model\EdgeFactory.cs" />
     <Compile Include="Model\EndStartEdgeWithWait.cs" />
-    <Compile Include="Model\Process.cs" />
     <Compile Include="Model\Project.cs" />
-    <Compile Include="Model\RootProcess.cs" />
+    <Compile Include="Model\Process.cs" />
     <Compile Include="Model\EndStartEdge.cs" />
     <Compile Include="Model\StartStartEdgeWithWait.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

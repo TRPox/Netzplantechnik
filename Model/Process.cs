@@ -6,19 +6,79 @@ using System.Threading.Tasks;
 
 namespace Netzplantechnik.Model
 {
-    public class Process : RootProcess
+    public class Process 
     {
-        public Process() {
-            this.Previous = new List<Process>();
-            this.Next = new List<Process>();
+        public Process()
+        {
+            this.Next = new List<Edge>();
+            this.Previous = new List<Edge>();
         }
 
-
-        public List<Process> Previous
+        #region Base Attributes
+        public string Name
         {
             get;
             set;
         }
 
+        public DateTime EarliestStart
+        {
+            get;
+            set;
+        }
+
+        public DateTime EarliestEnd
+        {
+            get;
+            set;
+        }
+
+        public DateTime LatestStart
+        {
+            get;
+            set;
+        }
+
+        public DateTime LatestEnd
+        {
+            get;
+            set;
+        }
+
+        public TimeSpan Duration
+        {
+            get;
+            set;
+        }
+        #endregion
+
+
+        #region GraphStructure
+
+        public List<Edge> Next
+        {
+            get;
+            set;
+        }
+
+        public List<Edge> Previous
+        {
+            get;
+            set;
+        }
+
+        public bool HasNext ()
+        {
+            return this.Next.Count() > 0;
+        }
+
+        public bool HasPrevious()
+        {
+            return this.Previous.Count() > 0;
+        }
+        #endregion
+
     }
+
+
 }

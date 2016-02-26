@@ -11,12 +11,17 @@ namespace Netzplantechnik.Model
         public Project()
         {
             EdgeFactory ef = new EdgeFactory();
-            this.RootProcesses = new List<RootProcess>();
-            RootProcess p = new RootProcess();
-            
+            this.Processes = new List<Process>();
+            this.RootProcesses = new List<Process>();
         }
 
-        public List<RootProcess> RootProcesses
+        public List<Process> Processes
+        {
+            get;
+            set;
+        }
+
+        public List<Process> RootProcesses
         {
             get;
             set;
@@ -24,9 +29,17 @@ namespace Netzplantechnik.Model
 
         public void CalcAllTimes()
         {
-            foreach (RootProcess p in RootProcesses)
+            foreach (Process p in RootProcesses)
             {
+                Process current = p;
+                while (current.HasNext())
+                {
+                    foreach (Edge e in current.Next)
+                    {
+                        e.calculateEarliestDatesForNext();
+                    }
 
+                }
             }
         }
 
