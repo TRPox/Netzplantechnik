@@ -8,17 +8,19 @@ namespace Netzplantechnik.Model
 {
     public class Project
     {
+
+        private Process latestProcess;
+
         public Project()
         {
-            EdgeFactory ef = new EdgeFactory();
-            this.Processes = new List<Process>();
+            this.EndProcesses = new List<Process>();
             this.RootProcesses = new List<Process>();
         }
 
-        public List<Process> Processes
+        public List<Process> EndProcesses
         {
             get;
-            set;
+            private set;
         }
 
         public List<Process> RootProcesses
@@ -31,14 +33,46 @@ namespace Netzplantechnik.Model
         {
             foreach (Process p in RootProcesses)
             {
-                Process current = p;
-                while (current.HasNext())
-                {
-                    foreach (Edge e in current.Next)
-                    {
-                        e.calculateEarliestDatesForNext();
-                    }
+                calculateForward(p);
+            }
+            foreach (Process p in EndProcesses)
+            {
+                p.LatestEnd = latestProcess.EarliestEnd;
+                p.LatestStart = p.LatestEnd - p.Duration + new TimeSpan(1, 0, 0, 0);
+                calculateBackward(p);
+            }
+        }
 
+        
+
+        private void calculateForward(Process current)
+        {
+            if (!current.HasNext())
+            {
+                if (latestProcess == null || latestProcess.EarliestEnd.CompareTo(current.EarliestEnd) < 0)
+                {
+                    latestProcess = current;
+                }
+                EndProcesses.Add(current);
+            }
+            else
+            {
+                foreach (Edge e in current.Next)
+                {
+                    e.calculateEarliestDatesForNext();
+                    calculateForward(e.Next);
+                }
+            }
+        }
+
+        private void calculateBackward(Process current)
+        {
+            if (current.HasPrevious())
+            {
+                foreach (Edge e in current.Previous)
+                {
+                    e.calculateLatestDatesForPrevious();
+                    calculateBackward(e.Previous);
                 }
             }
         }

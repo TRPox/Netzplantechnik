@@ -1,8 +1,20 @@
 ﻿<Window x:Class="Netzplantechnik.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="451" Width="525">
+    <StackPanel x:Name="MainFrame">
+        <ListView Height="193" x:Name="listBox">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  DisplayMemberBinding="{Binding Name}"/>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="{Binding SelectedItem.EarliestStart, ElementName=listBox}" IsEnabled="False" />
+        <Label Content="{Binding SelectedItem.EarliestEnd, ElementName=listBox}" IsEnabled="False" />
+        <Label Content="{Binding SelectedItem.LatestStart, ElementName=listBox}" IsEnabled="False" />
+        <Label Content="{Binding SelectedItem.LatestEnd, ElementName=listBox}" IsEnabled="False" />
+
+    </StackPanel>
 </Window>

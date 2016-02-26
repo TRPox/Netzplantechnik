@@ -23,3 +23,5 @@ D:\DropboxArchiv\Coden\Netzplantechnik\bin\Debug\Netzplantechnik.exe
 D:\DropboxArchiv\Coden\Netzplantechnik\bin\Debug\Netzplantechnik.pdb
 D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.exe
 D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.pdb
+C:\Users\Sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\View\ProcessPage.baml
+C:\Users\Sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\View\ProcessPage.g.cs
