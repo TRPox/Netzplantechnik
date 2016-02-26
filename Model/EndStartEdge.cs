@@ -6,18 +6,13 @@ using System.Threading.Tasks;
 
 namespace Netzplantechnik.Model
 {
-    class EndStartEdgeWithWait : Edge
+    public class EndStartEdge : Edge
     {
-        public TimeSpan Wait
-        {
-            get;
-            set;
-        }
-
+        
         protected override void calculateEarliestStartForNext()
         {
-            DateTime newStart = Previous.EarliestEnd.AddDays(1) + Wait;
-            if (Next.EarliestStart.CompareTo(newStart) < 0)  // if Next.EarliestStart - newStart < 0
+            DateTime newStart = Previous.EarliestEnd.AddDays(1);
+            if (Next.EarliestStart.CompareTo(newStart) < 0) 
             {
                 Next.EarliestStart = newStart;
             }

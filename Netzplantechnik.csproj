@@ -77,7 +77,7 @@
     <Compile Include="Model\Reverse_EndStartEdge.cs" />
     <Compile Include="Model\Reverse_EndStartEdgeWithWait.cs" />
     <Compile Include="Model\RootProcess.cs" />
-    <Compile Include="Model\StandardEdge.cs" />
+    <Compile Include="Model\EndStartEdge.cs" />
     <Compile Include="Model\StartStartEdgeWithWait.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

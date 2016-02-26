@@ -14,13 +14,25 @@ namespace Netzplantechnik.Model
             set;
         }
 
-        public override void calculateEarliestStartForNext()
+        
+        protected override void calculateEarliestStartForNext()
         {
             DateTime newStart = Previous.EarliestStart + Wait;  // FAZ_n = FAZ_(n-1) + b
             if (Next.EarliestStart.CompareTo(newStart) < 0)
             {
                 Next.EarliestStart = newStart;
             }
+        }
+
+
+        protected override void calculateLatestEndForPrevious()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void calculateLatestStartForPrevious()
+        {
+            throw new NotImplementedException();
         }
     }
 }
