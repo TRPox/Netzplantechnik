@@ -10,11 +10,13 @@ namespace Netzplantechnik.Model
     {
 
         private Process latestProcess;
+        private EdgeFactory edgeFactory;
 
         public Project()
         {
             this.EndProcesses = new List<Process>();
             this.RootProcesses = new List<Process>();
+            this.edgeFactory = new EdgeFactory();
         }
 
         public List<Process> EndProcesses
@@ -29,51 +31,71 @@ namespace Netzplantechnik.Model
             set;
         }
 
-        public void CalcAllTimes()
+        public void CalculateAllTimes()
+        {
+            CalculateForwardForAllProcesses();
+            CalculateBackwardsForAllProcesses();
+        }
+
+        private void CalculateForwardForAllProcesses()
         {
             foreach (Process p in RootProcesses)
             {
-                calculateForward(p);
+                CalculateForward(p);
             }
+        }
+
+        private void CalculateBackwardsForAllProcesses()
+        {
             foreach (Process p in EndProcesses)
             {
                 p.LatestEnd = latestProcess.EarliestEnd;
                 p.LatestStart = p.LatestEnd - p.Duration + new TimeSpan(1, 0, 0, 0);
-                calculateBackward(p);
+                CalculateBackward(p);
             }
         }
 
-        
-
-        private void calculateForward(Process current)
+        private void CalculateForward(Process current)
         {
             if (!current.HasNext())
-            {
-                if (latestProcess == null || latestProcess.EarliestEnd.CompareTo(current.EarliestEnd) < 0)
-                {
-                    latestProcess = current;
-                }
-                EndProcesses.Add(current);
-            }
+                AddProcessToEndProcesses(current);
             else
+                CalculateDatesForwardForAllEdges(current);
+        }
+
+        private void CalculateDatesForwardForAllEdges(Process current)
+        {
+            foreach (Edge e in current.Next)
             {
-                foreach (Edge e in current.Next)
-                {
-                    e.calculateEarliestDatesForNext();
-                    calculateForward(e.Next);
-                }
+                e.calculateEarliestDatesForNext();
+                CalculateForward(e.Next);
             }
         }
 
-        private void calculateBackward(Process current)
+        private void AddProcessToEndProcesses(Process current)
+        {
+            CompareToLatestProcess(current);
+            EndProcesses.Add(current);
+        }
+
+        private void CompareToLatestProcess(Process current)
+        {
+            if (latestProcess == null || latestProcess.EarliestEnd.CompareTo(current.EarliestEnd) < 0)
+                latestProcess = current;
+        }
+
+        private void CalculateBackward(Process current)
         {
             if (current.HasPrevious())
+                CalculateBackwardForAllEdges(current);
+        }
+
+        private void CalculateBackwardForAllEdges(Process current)
+        {
+            foreach (Edge e in current.Previous)
             {
-                foreach (Edge e in current.Previous)
-                {
-                    e.calculateLatestDatesForPrevious();
-                    calculateBackward(e.Previous);
-                }
+                e.calculateLatestDatesForPrevious();
+                CalculateBackward(e.Previous);
             }
         }
 

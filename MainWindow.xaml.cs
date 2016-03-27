@@ -94,7 +94,7 @@ namespace Netzplantechnik
 
             #endregion
 
-            project.CalcAllTimes();
+            project.CalculateAllTimes();
             
 
         }

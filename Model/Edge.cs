@@ -20,7 +20,7 @@ namespace Netzplantechnik.Model
 
         protected abstract void calculateEarliestStartForNext();
 
-        protected virtual void calculateEarliestEndForNext() //always the same for every edge
+        protected virtual void calculateEarliestEndForNext()
         {
             Next.EarliestEnd = Next.EarliestStart + Next.Duration - new TimeSpan(1, 0, 0, 0);
         }

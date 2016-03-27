@@ -25,3 +25,4 @@ D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.exe
 D:\DropboxArchiv\Coden\Netzplantechnik\obj\Debug\Netzplantechnik.pdb
 C:\Users\Sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\View\ProcessPage.baml
 C:\Users\Sven\documents\visual studio 2013\Projects\Netzplantechnik\obj\Debug\View\ProcessPage.g.cs
+C:\Users\Sven\Documents\Visual Studio 2013\Projects\Netzplantechnik\obj\Debug\Netzplantechnik.csprojResolveAssemblyReference.cache
